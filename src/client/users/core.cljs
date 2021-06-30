@@ -1,23 +1,20 @@
 (ns client.users.core
   (:require [re-frisk.core :as re-frisk]
-            [re-frame.core :as rf]
             [reagent.dom :as rd]
+            [re-frame.core :as rf]
             [client.users.views]
             [client.users.events]
             [client.users.subs]))
 
 (defn mount-ui []
-  (rd/render [client.users.views/address-widget]
+  (rd/render [client.users.views/main]
              (-> js/document
-                 (.querySelector "#address-widget"))))
+                 (.querySelector "#app"))))
+
 
 (defn run []
-  (try
-    (let [default-value (-> js/document
-                            (.querySelector "#address-widget textarea")
-                            (.-value))]
-      (rf/dispatch [:change-value :address default-value])
-      (mount-ui))))
+  (rf/dispatch [:initialize])
+  (mount-ui))
 (run)
 
 (comment

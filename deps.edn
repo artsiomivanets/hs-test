@@ -18,7 +18,10 @@
         ring/ring-mock {:mvn/version "0.4.0"}
         day8.re-frame/http-fx {:mvn/version "0.2.3"}
         cprop/cprop {:mvn/version "0.1.18"}
-        ring-logger/ring-logger {:mvn/version "1.0.1"}}
+        ring-logger/ring-logger {:mvn/version "1.0.1"}
+        ring/ring-json {:mvn/version "0.5.1"}
+        fork/fork {:mvn/version "2.4.1"}
+        jumblerg/ring-cors {:mvn/version "2.0.0"}}
  :aliases {:build-prod {:main-opts ["-m" "figwheel.main" "-bo" "prod"]}
            :test {:extra-paths ["test"]
                   :extra-deps {io.github.cognitect-labs/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"

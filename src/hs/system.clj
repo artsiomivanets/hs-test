@@ -1,7 +1,6 @@
 (ns hs.system
   (:require [mount.core :as m]
             [hs.web]
-            [hs.config]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
 (defn start []
@@ -12,7 +11,6 @@
 
 (defn -main [& args]
   (start))
-
 (comment
   (refresh)
   (start)

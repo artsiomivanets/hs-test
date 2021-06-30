@@ -15,3 +15,20 @@
  :suggested-addresses
  (fn [db _]
    (get-in db [:suggested-addresses] [])))
+
+
+(rf/reg-sub
+ :users
+ (fn [db _]
+   (get-in db [:users :data] [])))
+
+(rf/reg-sub
+ :loading
+ (fn [db [_ & path]]
+   (get-in db (concat [:loading] (vec path)))))
+
+
+(rf/reg-sub
+  :modals
+  (fn [db [_ key]]
+    (get-in db [:modals key])))
