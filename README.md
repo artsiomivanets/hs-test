@@ -1,3 +1,3 @@
-# Parens of the Dead
+# CRUD for resource
 
-A series of zombie games written with Clojure and ClojureScript
+re-frame + ring
